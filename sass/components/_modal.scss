@@ -1,0 +1,77 @@
+.backdrop{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 1;
+
+    transition: opacity 250ms $cubic;
+}
+.backdrop.is-hidden{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal {
+    transform: translate(-50%,-50%) scale(0.1);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+     
+    transform: translate(-50%,-50%) scale(1);
+
+    width: 528px;
+    height: 581px;
+    
+    background: $primary-white-color;
+    box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px 40px;
+
+    transition: opacity 250ms $cubic;
+
+    &__icon{
+        position:absolute;
+        width: 18px;
+        height: 18px;
+        top: 15px;
+        right: -4px;
+        transform: translate(-50%,-50%);
+        transition: fill 250ms $cubic;
+    }
+    
+    &__icon:hover,
+    &__icon:focus{
+        fill : $accent-color;
+    }
+    
+    &__button{
+        position:absolute;
+        right: 8px;
+        top: 8px;
+        background: $primary-white-color;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition:  border-color 250ms $cubic;   
+    }
+    
+    &__button:hover,
+    &__button:focus{
+        border-color: $accent-color;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+         0px 1px 1px rgba(0, 0, 0, 0.14),
+         0px 2px 1px rgba(0, 0, 0, 0.2);
+        
+    }
+}
+
